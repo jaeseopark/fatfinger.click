@@ -18,21 +18,14 @@ jobs:
         uses: borales/actions-yarn@v2.3.0
         with:
           cmd: build
-      - name: Copy files to tmp dir via scp
+      - name: Copy files to the html dir via scp
         uses: appleboy/scp-action@master
-        env:
-          HOST: 158.69.60.186
-          USERNAME: debian
-          PORT: 22
-          KEY: ${{ secrets.DEPLOY_SSHKEY }}
         with:
-          source: build
-          target: /tmp/fatfinger
-      - name: Move files to the location nginx is watching
-        uses: appleboy/ssh-action@master
-        with:
-          HOST: 158.69.60.186
-          USERNAME: debian
-          PORT: 22
-          KEY: ${{ secrets.DEPLOY_SSHKEY }}
-          script: sudo cp -r /tmp/fatfinger/* /var/www/html && rm -r /tmp/fatfinger/*
+          source: build/*
+          target: /var/www/html
+          strip_components: 1  # This removes the unwanted build/ directory
+          overwrite: true
+          host: 158.69.60.186
+          username: github
+          key: ${{ secrets.DEPLOY_PRV_KEY }}
+          passphrase: ${{ secrets.DEPLOY_PASSPHRASE }}
