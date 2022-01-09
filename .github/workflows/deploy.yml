@@ -3,7 +3,7 @@ name: Deploy
 on: [push]
 
 jobs:
-  build:
+  Deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -18,9 +18,9 @@ jobs:
       - name: Copy file via scp
         uses: appleboy/scp-action@master
         env:
-          HOST: ${{ secrets.DEPLOY_HOST }}
-          USERNAME: ${{ secrets.DEPLOY_USERNAME }}
-          PORT: ${{ secrets.DEPLOY_PORT }}
+          HOST: 158.69.60.186
+          USERNAME: debian
+          PORT: 22
           KEY: ${{ secrets.DEPLOY_SSHKEY }}
         with:
           source: .
