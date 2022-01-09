@@ -34,5 +34,5 @@ jobs:
           HOST: 158.69.60.186
           USERNAME: debian
           PORT: 22
-          KEY: ${{ secrets.SSHKEY }}
+          KEY: ${{ secrets.DEPLOY_SSHKEY }}
           script: sudo mv /tmp/fatfinger/build/* /var/www/html
