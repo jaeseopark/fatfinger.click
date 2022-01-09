@@ -54,6 +54,7 @@ const ServiceCard = ({
               <Badge
                 px={2}
                 py={1}
+                // eslint-disable-next-line react-hooks/rules-of-hooks
                 bg={useColorModeValue("gray.50", "gray.800")}
                 fontWeight={"400"}
                 key={tag}
