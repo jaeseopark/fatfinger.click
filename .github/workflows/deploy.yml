@@ -1,6 +1,9 @@
 name: Deploy
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   Deploy:
@@ -25,3 +28,11 @@ jobs:
         with:
           source: build
           target: /tmp/fatfinger
+    - name: Move files to the location nginx is watching
+      uses: appleboy/ssh-action@master
+      with:
+        HOST: 158.69.60.186
+        USERNAME: debian
+        PORT: 22
+        KEY: ${{ secrets.SSHKEY }}
+        script: sudo mv /tmp/fatfinger/build/* /var/www/html
