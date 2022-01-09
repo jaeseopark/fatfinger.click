@@ -1,0 +1,10 @@
+---
+- hosts: all
+  name: Install Docker SDK for Python
+  tasks:
+    - name: install pip package
+      package:
+        name: python3-pip
+    - name: pip install docker<5
+      pip:
+        name: "docker<5"

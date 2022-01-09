@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+    - name: start imf-web
+      docker_container:
+        name: imf-web
+        container_default_behavior: compatibility
+        image: jaeseoparkdocker/imessageforwarder-web:latest
+        state: started
+        ports:
+          - 3238:80
