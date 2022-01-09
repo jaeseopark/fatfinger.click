@@ -9,7 +9,11 @@ import {
 } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
 
-const NavLink = ({ children }: { children: ReactNode }) => (
+const NavLink = ({
+  children,
+  href,
+  ...props
+}: { children: ReactNode } & { href?: string }) => (
   <Link
     px={2}
     py={1}
@@ -18,7 +22,8 @@ const NavLink = ({ children }: { children: ReactNode }) => (
       textDecoration: "none",
       bg: useColorModeValue("gray.200", "gray.700"),
     }}
-    href={"#"}
+    href={href || "#"}
+    {...props}
   >
     {children}
   </Link>
@@ -38,18 +43,9 @@ const Nav = () => (
       justify={{ base: "center", md: "space-between" }}
       align={{ base: "center", md: "center" }}
     >
-      <Link
-        px={2}
-        py={1}
-        rounded={"md"}
-        _hover={{
-          textDecoration: "none",
-          bg: useColorModeValue("gray.200", "gray.700"),
-        }}
-        href="/"
-      >
-        <Text>Fatfinger.click</Text>
-      </Link>
+      <NavLink href="/">
+        <Text>fatfinger.click</Text>
+      </NavLink>
 
       <Stack direction={"row"} spacing={6}>
         <ColorModeSwitcher />

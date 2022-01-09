@@ -13,6 +13,7 @@ import Service from "./type/service";
 
 const ServiceCard = ({
   name,
+  releaseStatus,
   logoSource,
   description,
   externalLink,
@@ -90,9 +91,10 @@ const ServiceCard = ({
             _focus={{
               bg: "gray.200",
             }}
-            onClick={() => window.open(externalLink, "_self")}
+            onClick={() => window.open("/" + name, "_self")}
+            disabled={releaseStatus === "development"}
           >
-            Read more
+            {releaseStatus === "development" ? "Coming soon" : "Launch"}
           </Button>
         )}
       </Stack>
