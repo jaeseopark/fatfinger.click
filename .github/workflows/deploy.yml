@@ -35,4 +35,4 @@ jobs:
           USERNAME: debian
           PORT: 22
           KEY: ${{ secrets.DEPLOY_SSHKEY }}
-          script: sudo mv /tmp/fatfinger/build/* /var/www/html
+          script: sudo cp -r /tmp/fatfinger/* /var/www/html && rm -r /tmp/fatfinger/*
