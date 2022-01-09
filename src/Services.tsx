@@ -1,4 +1,4 @@
-import { Box, SimpleGrid, Stack } from "@chakra-ui/react";
+import { SimpleGrid, Stack } from "@chakra-ui/react";
 
 import Service from "./type/service";
 import ServiceCard from "./ServiceCard";
@@ -8,35 +8,42 @@ import imfWebIcon from "./asset/imfweb.png";
 export const SERVICES: Service[] = [
   {
     name: "imessageforwarder",
+    releaseStatus: "production",
     logoSource: imfWebIcon,
     description:
-      "Send and receive iMessage right in your browser. The app is targeted towards hybrid computer users who use both Mac and Windows. You must own an iCloud-enabled device to use as the proxy.",
+      "Send and receive iMessage right in your browser.",
     externalLink: "https://github.com/jaeseopark/imessageforwarder-web",
   },
   {
     name: "m9cad",
+    releaseStatus: "development",
     description:
-      "An SVG editor to trace lines and curves on top of a video. Use it to create the outline of an object.",
+      "Trace lines and curves on top of a video. Use it to create the outline of an object in your video and export it as SVG.",
     externalLink: "https://github.com/jaeseopark/m9cad",
   },
   {
     name: "od-imdb",
+    releaseStatus: "development",
     description: "",
   },
   {
     name: "placeholder",
+    releaseStatus: "development",
     description: "foobar",
   },
   {
     name: "placeholder2",
+    releaseStatus: "development",
     description: "foobar",
   },
   {
     name: "placeholder3",
+    releaseStatus: "development",
     description: "foobar",
   },
   {
     name: "placeholder4",
+    releaseStatus: "development",
     description: "foobar",
   },
 ];

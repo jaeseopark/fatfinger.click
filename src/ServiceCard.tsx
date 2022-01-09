@@ -13,6 +13,7 @@ import Service from "./type/service";
 
 const ServiceCard = ({
   name,
+  releaseStatus,
   logoSource,
   description,
   externalLink,
@@ -79,8 +80,9 @@ const ServiceCard = ({
               bg: "blue.500",
             }}
             onClick={() => window.open("/" + name, "_self")}
+            disabled={releaseStatus === "development"}
           >
-            Launch
+            {releaseStatus === "development" ? "Coming soon" : "Launch"}
           </Button>
           {externalLink && (
             <Button
