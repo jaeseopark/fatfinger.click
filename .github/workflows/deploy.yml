@@ -15,7 +15,7 @@ jobs:
         uses: borales/actions-yarn@v2.3.0
         with:
           cmd: build
-      - name: Copy file via scp
+      - name: Copy files to tmp dir via scp
         uses: appleboy/scp-action@master
         env:
           HOST: 158.69.60.186
@@ -23,5 +23,5 @@ jobs:
           PORT: 22
           KEY: ${{ secrets.DEPLOY_SSHKEY }}
         with:
-          source: .
-          target: /var/www/html
+          source: build
+          target: /tmp/fatfinger
