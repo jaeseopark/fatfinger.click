@@ -1,4 +1,4 @@
-import { SimpleGrid, Stack } from "@chakra-ui/react";
+import { SimpleGrid, Stack, Text } from "@chakra-ui/react";
 
 import App from "./type/app";
 import AppCard from "./AppCard";
@@ -15,7 +15,15 @@ export const APPS: App[] = [
     description:
       "Send and receive iMessage right in your browser. Made for hybrid users who own both Mac and Windows.",
     primaryLink: "/imessageforwarder",
-    externalLink: "https://github.com/jaeseopark/imessageforwarder-web",
+    readMoreLink: "https://github.com/jaeseopark/imessageforwarder-web",
+  },
+  {
+    name: "OD Boost",
+    releaseStatus: "installable",
+    description:
+      "Give open directories a modern look with a click of a button. Navigate with breadcrumbs, bulk-lookup movie ratings, and more.",
+    primaryLink: "https://chrome.google.com/webstore/category/extensions",
+    tags: ["chrome extension"],
   },
   {
     name: "stockalert",
@@ -23,22 +31,19 @@ export const APPS: App[] = [
     description:
       "Get notified when hot commodity items become available for purchase. Supported websites: Bestbuy Canada, Memory Express, and CalDigit.",
     primaryLink:
-      "https://github.com/jaeseopark/stockalert/issues/new?title=Access%20Request",
+      "https://github.com/jaeseopark/stockalert/issues/new?title=Can I get an invite?",
     logoSource: stockalertIcon,
+    tags: ["discord", "SMS"],
   },
   {
     name: "m9cad",
     releaseStatus: "development",
     description:
       "Trace lines and curves over a live video and export them as SVG files.",
-    externalLink: "https://github.com/jaeseopark/m9cad",
+    readMoreLink: "https://github.com/jaeseopark/m9cad",
     logoSource: m9cadIcon,
   },
-  {
-    name: "od-imdb",
-    releaseStatus: "development",
-    description: "",
-  },
+
   {
     name: "placeholder",
     releaseStatus: "development",
@@ -57,14 +62,24 @@ export const APPS: App[] = [
 ];
 
 const AppGrid = () => (
-  <Stack align={"center"} justify={"center"} direction={"row"} marginY={30}>
-    <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} paddingX={10}>
-      {APPS.map((s) => (
-        <Stack key={s.name}>
-          <AppCard {...s} />
-        </Stack>
-      ))}
-    </SimpleGrid>
+  <Stack direction="column">
+    <Text align="center" fontSize="5xl" my={20}>
+      Apps
+    </Text>
+    <Stack align={"center"} justify={"center"} direction={"row"} marginY={30}>
+      <SimpleGrid
+        columns={{ base: 1, md: 3 }}
+        spacing={10}
+        paddingX={10}
+        mb={30}
+      >
+        {APPS.map((s) => (
+          <Stack key={s.name}>
+            <AppCard {...s} />
+          </Stack>
+        ))}
+      </SimpleGrid>
+    </Stack>
   </Stack>
 );
 

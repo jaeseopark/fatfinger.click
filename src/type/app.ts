@@ -1,4 +1,4 @@
-export type ReleaseStatus = "production" | "beta" | "development";
+export type ReleaseStatus = "production" | "installable" | "beta" | "development";
 
 type App = {
   name: string;
@@ -6,8 +6,8 @@ type App = {
   logoSource?: string;
   description: string;
   primaryLink?: string;
-  externalLink?: string;
-  additionalTags?: string[];
+  readMoreLink?: string;
+  tags?: string[];
 };
 
 export default App;

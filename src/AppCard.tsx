@@ -22,6 +22,8 @@ const PrimaryButton = ({
     switch (releaseStatus) {
       case "production":
         return "Launch";
+      case "installable":
+        return "Install";
       case "beta":
         return "Request access";
       default:
@@ -52,8 +54,8 @@ const PrimaryButton = ({
     </Button>
   );
 };
-const ReadMoreButton = ({ externalLink }: { externalLink?: string }) => {
-  if (!externalLink) return null;
+const ReadMoreButton = ({ readMoreLink }: { readMoreLink?: string }) => {
+  if (!readMoreLink) return null;
   return (
     <Button
       flex={1}
@@ -62,24 +64,15 @@ const ReadMoreButton = ({ externalLink }: { externalLink?: string }) => {
       _focus={{
         bg: "gray.200",
       }}
-      onClick={() => window.open(externalLink, "_self")}
+      onClick={() => window.open(readMoreLink, "_self")}
     >
       Read more
     </Button>
   );
 };
 
-const Tags = ({
-  releaseStatus,
-  additionalTags,
-}: {
-  releaseStatus: ReleaseStatus;
-  additionalTags?: string[];
-}) => {
-  const tags = releaseStatus === "beta" ? ["private access"] : [];
-  if (additionalTags) {
-    tags.push(...additionalTags);
-  }
+const Tags = ({ tags }: { tags?: string[] }) => {
+  if (!tags) return null;
   return (
     <Stack align={"center"} justify={"center"} direction={"row"} mt={6}>
       {tags.map((tag) => (
@@ -116,31 +109,35 @@ const CenteredContainer = ({ children }) => (
 );
 
 // @ts-ignore
-const Logo = ({ logoSource }) => (
-  <Avatar
-    size={"xl"}
-    src={logoSource}
-    alt={"Avatar Alt"}
-    mb={4}
-    pos={"relative"}
-  />
-);
+const Logo = ({ logoSource }) => {
+  if (!logoSource) return null;
+  return (
+    <Avatar
+      size={"xl"}
+      src={logoSource}
+      alt={"Avatar Alt"}
+      mb={4}
+      pos={"relative"}
+      backgroundColor="transparent"
+    />
+  );
+};
 
 // @ts-ignore
-const Name = ({ name }) => (
+const Name = ({ children }) => (
   <Heading fontSize={"2xl"} fontFamily={"body"}>
-    {name}
+    {children}
   </Heading>
 );
 
 // @ts-ignore
-const Description = ({ description }) => (
+const Description = ({ children }) => (
   <Text
     textAlign={"center"}
     color={useColorModeValue("gray.700", "gray.400")}
     px={3}
   >
-    {description}
+    {children}
   </Text>
 );
 
@@ -150,21 +147,21 @@ const AppCard = ({
   logoSource,
   description,
   primaryLink,
-  externalLink,
-  additionalTags,
+  readMoreLink,
+  tags,
 }: App) => {
   return (
     <CenteredContainer>
       <Logo logoSource={logoSource} />
-      <Name name={name} />
-      <Description description={description} />
-      <Tags releaseStatus={releaseStatus} additionalTags={additionalTags} />
+      <Name>{name}</Name>
+      <Description>{description}</Description>
+      <Tags tags={tags} />
       <Stack mt={8} direction={"row"} spacing={4}>
         <PrimaryButton
           primaryLink={primaryLink}
           releaseStatus={releaseStatus}
         />
-        <ReadMoreButton externalLink={externalLink} />
+        <ReadMoreButton readMoreLink={readMoreLink} />
       </Stack>
     </CenteredContainer>
   );
