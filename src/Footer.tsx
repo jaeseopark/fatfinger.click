@@ -48,6 +48,9 @@ export default function Footer() {
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
+      bottom={0}
+      position="absolute"
+      width="100%"
     >
       <Container
         as={Stack}
@@ -65,7 +68,7 @@ export default function Footer() {
           </SocialButton>
           <SocialButton
             label={"Github"}
-            href="https://github.com/jaeseopark/fatfinger.click/issues/new?title=I%20need%20help"
+            href="https://github.com/jaeseopark/fatfinger.click/issues/new"
           >
             <ChatIcon />
           </SocialButton>

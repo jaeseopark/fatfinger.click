@@ -1,4 +1,4 @@
-import { SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { SimpleGrid, Spacer, Stack } from "@chakra-ui/react";
 
 import App from "./type/app";
 import AppCard from "./AppCard";
@@ -30,8 +30,7 @@ export const APPS: App[] = [
     releaseStatus: "beta",
     description:
       "Get notified when hot commodity items become available for purchase. Supported websites: Bestbuy Canada, Memory Express, and CalDigit.",
-    primaryLink:
-      "https://github.com/jaeseopark/stockalert/issues/new?title=Can I get an invite?",
+    primaryLink: "https://github.com/jaeseopark/stockalert/issues/new",
     logoSource: stockalertIcon,
     tags: ["discord", "SMS"],
   },
@@ -43,43 +42,24 @@ export const APPS: App[] = [
     readMoreLink: "https://github.com/jaeseopark/m9cad",
     logoSource: m9cadIcon,
   },
-
-  {
-    name: "placeholder",
-    releaseStatus: "development",
-    description: "foobar",
-  },
-  {
-    name: "placeholder2",
-    releaseStatus: "development",
-    description: "foobar",
-  },
-  {
-    name: "placeholder3",
-    releaseStatus: "development",
-    description: "foobar",
-  },
 ];
 
 const AppGrid = () => (
-  <Stack direction="column">
-    <Text align="center" fontSize="5xl" my={20}>
-      Apps
-    </Text>
-    <Stack align={"center"} justify={"center"} direction={"row"} marginY={30}>
-      <SimpleGrid
-        columns={{ base: 1, md: 3 }}
-        spacing={10}
-        paddingX={10}
-        mb={30}
-      >
-        {APPS.map((s) => (
-          <Stack key={s.name}>
-            <AppCard {...s} />
-          </Stack>
-        ))}
-      </SimpleGrid>
-    </Stack>
+  <Stack
+    align={"center"}
+    justify={"center"}
+    direction={"row"}
+    px={10}
+    pt="30px"
+    pb="100px"
+  >
+    <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
+      {APPS.map((s) => (
+        <Stack key={s.name}>
+          <AppCard {...s} />
+        </Stack>
+      ))}
+    </SimpleGrid>
   </Stack>
 );
 
