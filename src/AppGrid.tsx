@@ -1,4 +1,4 @@
-import { SimpleGrid, Spacer, Stack } from "@chakra-ui/react";
+import { SimpleGrid, Stack } from "@chakra-ui/react";
 
 import App from "./type/app";
 import AppCard from "./AppCard";
