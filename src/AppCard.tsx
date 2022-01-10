@@ -9,7 +9,7 @@ import {
   useColorModeValue,
   Avatar,
 } from "@chakra-ui/react";
-import Service, { ReleaseStatus } from "./type/service";
+import App, { ReleaseStatus } from "./type/app";
 
 const PrimaryButton = ({
   primaryLink,
@@ -144,7 +144,7 @@ const Description = ({ description }) => (
   </Text>
 );
 
-const ServiceCard = ({
+const AppCard = ({
   name,
   releaseStatus,
   logoSource,
@@ -152,7 +152,7 @@ const ServiceCard = ({
   primaryLink,
   externalLink,
   additionalTags,
-}: Service) => {
+}: App) => {
   return (
     <CenteredContainer>
       <Logo logoSource={logoSource} />
@@ -170,4 +170,4 @@ const ServiceCard = ({
   );
 };
 
-export default ServiceCard;
+export default AppCard;

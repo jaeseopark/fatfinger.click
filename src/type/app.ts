@@ -1,6 +1,6 @@
 export type ReleaseStatus = "production" | "beta" | "development";
 
-type Service = {
+type App = {
   name: string;
   releaseStatus: ReleaseStatus;
   logoSource?: string;
@@ -10,4 +10,4 @@ type Service = {
   additionalTags?: string[];
 };
 
-export default Service;
+export default App;

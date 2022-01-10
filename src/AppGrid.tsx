@@ -1,13 +1,13 @@
 import { SimpleGrid, Stack } from "@chakra-ui/react";
 
-import Service from "./type/service";
-import ServiceCard from "./ServiceCard";
+import App from "./type/app";
+import AppCard from "./AppCard";
 
 import imfWebIcon from "./asset/imfweb.png";
 import stockalertIcon from "./asset/stockalert.png";
 import m9cadIcon from "./asset/m9cad.png";
 
-export const SERVICES: Service[] = [
+export const APPS: App[] = [
   {
     name: "iMessage Forwarder",
     releaseStatus: "production",
@@ -56,16 +56,16 @@ export const SERVICES: Service[] = [
   },
 ];
 
-const Services = () => (
+const AppGrid = () => (
   <Stack align={"center"} justify={"center"} direction={"row"} marginY={30}>
     <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} paddingX={10}>
-      {SERVICES.map((s) => (
+      {APPS.map((s) => (
         <Stack key={s.name}>
-          <ServiceCard {...s} />
+          <AppCard {...s} />
         </Stack>
       ))}
     </SimpleGrid>
   </Stack>
 );
 
-export default Services;
+export default AppGrid;
