@@ -9,9 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { FaGithub } from "react-icons/fa";
 import { ReactNode } from "react";
-import { EmailIcon } from "@chakra-ui/icons";
-
-const showMailToButton = false;
+import { ChatIcon } from "@chakra-ui/icons";
 
 const SocialButton = ({
   children,
@@ -65,11 +63,12 @@ export default function Footer() {
           <SocialButton label={"Github"} href="https://github.com/jaeseopark">
             <FaGithub />
           </SocialButton>
-          {showMailToButton && (
-            <SocialButton label={"Github"} href="mailto:...">
-              <EmailIcon />
-            </SocialButton>
-          )}
+          <SocialButton
+            label={"Github"}
+            href="https://github.com/jaeseopark/fatfinger.click/issues/new?title=I%20need%20help"
+          >
+            <ChatIcon />
+          </SocialButton>
         </Stack>
       </Container>
     </Box>

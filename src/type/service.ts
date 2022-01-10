@@ -1,19 +1,13 @@
-export type ExternalLinkType = "github" | "web";
-
-export type ReleaseStatus = "production" | "development";
-
-export type ExternalLink = {
-  type: ExternalLinkType;
-  href: string;
-};
+export type ReleaseStatus = "production" | "beta" | "development";
 
 type Service = {
   name: string;
   releaseStatus: ReleaseStatus;
   logoSource?: string;
   description: string;
+  primaryLink?: string;
   externalLink?: string;
-  tags?: string[];
+  additionalTags?: string[];
 };
 
 export default Service;
