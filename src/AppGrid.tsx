@@ -6,6 +6,7 @@ import AppCard from "./AppCard";
 import imfWebIcon from "./asset/imfweb.png";
 import stockalertIcon from "./asset/stockalert.png";
 import m9cadIcon from "./asset/m9cad.png";
+import odBoostIcon from "./asset/odboost.png";
 
 export const APPS: App[] = [
   {
@@ -24,6 +25,7 @@ export const APPS: App[] = [
       "Give open directories a modern look with a click of a button. Navigate with breadcrumbs, bulk-lookup movie ratings, and more.",
     primaryLink: "https://chrome.google.com/webstore/category/extensions",
     tags: ["chrome extension"],
+    logoSource: odBoostIcon,
   },
   {
     name: "stockalert",
