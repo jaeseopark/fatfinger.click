@@ -9,6 +9,7 @@ import {
   useColorModeValue,
   Avatar,
 } from "@chakra-ui/react";
+import styled from "styled-components";
 import App, { ReleaseStatus } from "./type/app";
 
 const PrimaryButton = ({
@@ -109,23 +110,21 @@ const CenteredContainer = ({ children }) => (
 );
 
 // @ts-ignore
-const Logo = ({ logoSource }) => {
+const Logo = ({ logoSource, isSquareLogo }) => {
   if (!logoSource) return null;
-  return (
-    <Avatar
-      size={"xl"}
-      src={logoSource}
-      alt={"Avatar Alt"}
-      mb={4}
-      pos={"relative"}
-      backgroundColor="transparent"
-    />
-  );
+  const StyledAvatar = styled(Avatar)`
+    background-color: transparent;
+    position: relative;
+    img {
+      ${() => (isSquareLogo ? "border-radius: 0;" : "")}
+    }
+  `;
+  return <StyledAvatar size="xl" mb={4} src={logoSource} alt="Logo" />;
 };
 
 // @ts-ignore
 const Name = ({ children }) => (
-  <Heading fontSize={"2xl"} fontFamily={"body"}>
+  <Heading fontSize={"2xl"} fontFamily={"body"} mb={4}>
     {children}
   </Heading>
 );
@@ -145,6 +144,7 @@ const AppCard = ({
   name,
   releaseStatus,
   logoSource,
+  isSquareLogo,
   description,
   primaryLink,
   readMoreLink,
@@ -152,7 +152,7 @@ const AppCard = ({
 }: App) => {
   return (
     <CenteredContainer>
-      <Logo logoSource={logoSource} />
+      <Logo logoSource={logoSource} isSquareLogo={isSquareLogo} />
       <Name>{name}</Name>
       <Description>{description}</Description>
       <Tags tags={tags} />

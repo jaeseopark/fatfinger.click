@@ -4,6 +4,7 @@ type App = {
   name: string;
   releaseStatus: ReleaseStatus;
   logoSource?: string;
+  isSquareLogo?: boolean;
   description: string;
   primaryLink?: string;
   readMoreLink?: string;

@@ -1,4 +1,4 @@
-import { ColorModeScript } from "@chakra-ui/react";
+import { Box, ColorModeScript } from "@chakra-ui/react";
 import * as React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
@@ -13,9 +13,11 @@ ReactDOM.render(
   <React.StrictMode>
     <ColorModeScript />
     <ChakraProvider theme={theme}>
-      <Navbar />
-      <AppGrid />
-      <Footer />
+      <Box minH="100vh">
+        <Navbar />
+        <AppGrid />
+        <Footer />
+      </Box>
     </ChakraProvider>
   </React.StrictMode>,
   document.getElementById("root")
