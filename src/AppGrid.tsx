@@ -3,20 +3,19 @@ import { SimpleGrid, Stack } from "@chakra-ui/react";
 import App from "./type/app";
 import AppCard from "./AppCard";
 
-import imfWebIcon from "./asset/imfweb.png";
+import imessageeeIcon from "./asset/imfweb.png";
 import stockalertIcon from "./asset/stockalert.png";
 import m9cadIcon from "./asset/m9cad.png";
 import odBoostIcon from "./asset/odboost.png";
 
 export const APPS: App[] = [
   {
-    name: "iMessage Forwarder",
+    name: "iMessageee",
     releaseStatus: "production",
-    logoSource: imfWebIcon,
+    logoSource: imessageeeIcon,
     description:
       "Send and receive iMessage right in your browser. Made for hybrid users who own both Mac and Windows.",
-    primaryLink: "/imessageforwarder",
-    readMoreLink: "https://github.com/jaeseopark/imessageforwarder-web",
+    primaryLink: "/imessageee",
   },
   {
     name: "OD Boost",
