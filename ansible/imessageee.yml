@@ -5,7 +5,7 @@
       docker_container:
         name: imf-web
         container_default_behavior: compatibility
-        image: jaeseoparkdocker/imessageforwarder-web:latest
+        image: jaeseoparkdocker/imessageee:latest
         state: started
         ports:
           - 3238:80
