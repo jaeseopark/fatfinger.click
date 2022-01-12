@@ -19,7 +19,7 @@ export const APPS: App[] = [
   },
   {
     name: "OD Boost",
-    releaseStatus: "installable",
+    releaseStatus: "development",
     description:
       "Give open directories a modern look with a click of a button. Navigate with breadcrumbs, bulk-lookup movie ratings, and more.",
     primaryLink: "https://chrome.google.com/webstore/category/extensions",
