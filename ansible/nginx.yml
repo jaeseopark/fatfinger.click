@@ -11,14 +11,14 @@
     - name: Ensure certbot python sdk is installed
       apt:
         name: python3-certbot-nginx
-    - name: Ensure base nginx config file is present
+    - name: Ensure nginx config file is present
       copy:
         src: nginx.conf
         dest: /etc/nginx/conf.d/fatfinger.click.conf
     - name: Ensure default config file is absent
       file: name=/etc/nginx/sites-enabled/default state=absent
     - name: Run certbot
-      shell: certbot install --nginx -d fatfinger.click -m admin@fatfinger.click --agree-tos --cert-name fatfinger.click --redirect
+      shell: certbot install --nginx -d fatfinger.click,imessageee.fatfinger.click --expand --agree-tos --cert-name fatfinger.click --redirect
       become: yes
       notify: restart nginx
     - name: Ensure the cron job exists
