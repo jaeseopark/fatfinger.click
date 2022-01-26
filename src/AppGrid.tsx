@@ -15,7 +15,7 @@ export const APPS: App[] = [
     logoSource: imessageeeIcon,
     description:
       "Send and receive iMessage right in your browser. Made for hybrid users who own both Mac and Windows.",
-    primaryLink: "/imessageee",
+    primaryLink: "https://imessageee.fatfinger.click/",
   },
   {
     name: "OD Boost",
