@@ -11,14 +11,10 @@
     - name: Ensure certbot python sdk is installed
       apt:
         name: python3-certbot-nginx
-    - name: Ensure base nginx config file is present
+    - name: Ensure nginx config file is present
       copy:
         src: nginx.conf
         dest: /etc/nginx/conf.d/fatfinger.click.conf
-    - name: Ensure imessageee nginx config file is present
-      copy:
-        src: nginx-imessageee.conf
-        dest: /etc/nginx/conf.d/imessageee.fatfinger.click.conf
     - name: Ensure default config file is absent
       file: name=/etc/nginx/sites-enabled/default state=absent
     - name: Run certbot
