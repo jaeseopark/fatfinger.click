@@ -13,7 +13,7 @@
         name: python3-certbot-nginx
     - name: Ensure base nginx config file is present
       copy:
-        src: nginx-base.conf
+        src: nginx.conf
         dest: /etc/nginx/conf.d/fatfinger.click.conf
     - name: Ensure imessageee nginx config file is present
       copy:
