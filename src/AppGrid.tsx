@@ -43,6 +43,14 @@ export const APPS: App[] = [
     readMoreLink: "https://github.com/jaeseopark/m9cad",
     logoSource: m9cadIcon,
   },
+  {
+    name: "mlib",
+    releaseStatus: "development",
+    description:
+      "A suite of self-hosted apps for starting and maintaining a music library",
+    primaryLink: "https://mlib.fatfinger.click/",
+    tags: ["youtube-dl", "ffmpeg", "subsonic"],
+  },
 ];
 
 const AppGrid = () => (
