@@ -11,7 +11,7 @@ import odBoostIcon from "./asset/odboost.png";
 export const APPS: App[] = [
   {
     name: "iMessageee",
-    releaseStatus: "live",
+    releaseStatus: "Launch",
     logoSource: imessageeeIcon,
     description:
       "Send and receive iMessage right in your browser. Made for hybrid users who own both Mac and Windows.",
@@ -19,7 +19,7 @@ export const APPS: App[] = [
   },
   {
     name: "mlib",
-    releaseStatus: "live",
+    releaseStatus: "Launch",
     description:
       "A suite of self-hosted apps for starting and maintaining a music library",
     primaryLink: "https://mlib.fatfinger.click/",
@@ -27,7 +27,7 @@ export const APPS: App[] = [
   },
   {
     name: "stockalert",
-    releaseStatus: "experiment",
+    releaseStatus: "Request Access",
     description:
       "Get notified when hot commodity items become available for purchase. Supported websites: Bestbuy Canada, Memory Express, and CalDigit.",
     primaryLink: "https://github.com/jaeseopark/stockalert/issues/new",
@@ -36,7 +36,7 @@ export const APPS: App[] = [
   },
   {
     name: "OD Boost",
-    releaseStatus: "development",
+    releaseStatus: "Coming Soon",
     description:
       "Give open directories a modern look with a click of a button. Navigate with breadcrumbs, bulk-lookup movie ratings, and more.",
     primaryLink: "https://chrome.google.com/webstore/category/extensions",
@@ -45,7 +45,7 @@ export const APPS: App[] = [
   },
   {
     name: "m9cad",
-    releaseStatus: "development",
+    releaseStatus: "Coming Soon",
     description:
       "Trace lines and curves over a live video and export them as SVG files.",
     readMoreLink: "https://github.com/jaeseopark/m9cad",
