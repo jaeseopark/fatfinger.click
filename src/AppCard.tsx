@@ -21,11 +21,11 @@ const PrimaryButton = ({
 }) => {
   const getButtonLabel = () => {
     switch (releaseStatus) {
-      case "production":
+      case "live":
         return "Launch";
       case "installable":
         return "Install";
-      case "beta":
+      case "experiment":
         return "Request access";
       default:
         return "Coming soon";
