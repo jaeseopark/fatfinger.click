@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+    - name: start mlib
+      docker_container:
+        name: mlib
+        container_default_behavior: compatibility
+        image: jaeseoparkdocker/mlib-ui:latest
+        state: started
+        ports:
+          - 4534:80

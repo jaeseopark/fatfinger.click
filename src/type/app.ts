@@ -1,4 +1,4 @@
-export type ReleaseStatus = "production" | "installable" | "beta" | "development";
+export type ReleaseStatus = "Launch" | "Install" | "Request Access" | "Coming Soon";
 
 type App = {
   name: string;

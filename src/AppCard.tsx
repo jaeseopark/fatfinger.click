@@ -19,19 +19,6 @@ const PrimaryButton = ({
   primaryLink?: string;
   releaseStatus: ReleaseStatus;
 }) => {
-  const getButtonLabel = () => {
-    switch (releaseStatus) {
-      case "production":
-        return "Launch";
-      case "installable":
-        return "Install";
-      case "beta":
-        return "Request access";
-      default:
-        return "Coming soon";
-    }
-  };
-
   return (
     <Button
       flex={1}
@@ -49,9 +36,9 @@ const PrimaryButton = ({
         bg: "blue.500",
       }}
       onClick={() => window.open(primaryLink, "_self")}
-      disabled={releaseStatus === "development"}
+      disabled={releaseStatus === "Coming Soon"}
     >
-      {getButtonLabel()}
+      {releaseStatus}
     </Button>
   );
 };
